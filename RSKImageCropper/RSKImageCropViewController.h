@@ -73,6 +73,7 @@ typedef NS_ENUM(NSUInteger, RSKImageCropMode) {
  */
 @property (weak, nonatomic, nullable) id<RSKImageCropViewControllerDataSource> dataSource;
 
+
 ///--------------------------
 /// @name Accessing the Image
 ///--------------------------
@@ -276,6 +277,7 @@ typedef NS_ENUM(NSUInteger, RSKImageCropMode) {
  */
 @property (assign, nonatomic) CGFloat landscapeCropViewTrailingAndChooseButtonTrailingHorizontalSpace;
 
+@property (copy, nonatomic) void (^configureNavigationItem)(UINavigationItem* navigationItem);
 @end
 
 /**
