@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol RSKImageCropViewControllerDataSource;
 @protocol RSKImageCropViewControllerDelegate;
+@protocol RSKImageCropViewControllerUIDelegate;
 
 /**
  Types of supported crop modes.
@@ -72,6 +73,11 @@ typedef NS_ENUM(NSUInteger, RSKImageCropMode) {
  @discussion A `RSKImageCropViewControllerDataSource` data source provides a custom rect and a custom path for the mask and a custom movement rect for the image.
  */
 @property (weak, nonatomic, nullable) id<RSKImageCropViewControllerDataSource> dataSource;
+/**
+ *
+ */
+@property (weak, nonatomic, nullable) id<RSKImageCropViewControllerUIDelegate> uiDelegate;
+
 
 ///--------------------------
 /// @name Accessing the Image
@@ -336,4 +342,8 @@ typedef NS_ENUM(NSUInteger, RSKImageCropMode) {
 
 @end
 
+@protocol RSKImageCropViewControllerUIDelegate <NSObject>
+@optional
+-(void)imageCropViewController:(RSKImageCropViewController *)controller navigationItem:(UINavigationItem*)navigationItem;
+@end
 NS_ASSUME_NONNULL_END
